@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyi3dvnm25s1s"]
+
+[ext_resource type="Script" uid="uid://dos6axoupfyxj" path="res://ui/debugger.gd" id="1_x0pvs"]
+[ext_resource type="FontFile" uid="uid://bscuqh1e5l8j0" path="res://fonts/NotoSans-Bold.ttf" id="2_queyg"]
+[ext_resource type="FontFile" uid="uid://caiw57cig6lu2" path="res://fonts/NotoSans-Regular.ttf" id="3_4v6k1"]
+[ext_resource type="Script" uid="uid://dug0cjqw5p7fs" path="res://ui/ConsoleLine.gd" id="3_queyg"]
+
+[sub_resource type="Theme" id="Theme_3j7gw"]
+Label/fonts/font = ExtResource("2_queyg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v6k1"]
+bg_color = Color(0.10747974, 0.10747974, 0.10747967, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_queyg"]
+font = ExtResource("3_4v6k1")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eroim"]
+bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Debugger" type="Node2D"]
+script = ExtResource("1_x0pvs")
+metadata/_custom_type_script = "uid://dos6axoupfyxj"
+metadata/_edit_use_anchors_ = true
+
+[node name="DebugInfo" type="Window" parent="."]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+oversampling_override = 1.0
+title = "Debug Variables Info"
+position = Vector2i(25, 36)
+size = Vector2i(435, 240)
+visible = false
+wrap_controls = true
+always_on_top = true
+transparent = true
+unfocusable = true
+mouse_passthrough = true
+minimize_disabled = true
+maximize_disabled = true
+max_size = Vector2i(1280, 720)
+keep_title_visible = true
+content_scale_mode = 1
+content_scale_aspect = 1
+theme = SubResource("Theme_3j7gw")
+
+[node name="VariablesList" type="VFlowContainer" parent="DebugInfo"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_auto_translate_mode = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DebugConsole" type="VSplitContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 129.0
+offset_top = 36.0
+offset_right = 599.0
+offset_bottom = 451.0
+theme_override_constants/separation = 0
+dragging_enabled = false
+dragger_visibility = 2
+
+[node name="Header" type="PanelContainer" parent="DebugConsole"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4v6k1")
+
+[node name="Label" type="Label" parent="DebugConsole/Header"]
+layout_mode = 2
+text = "Debug Console"
+label_settings = SubResource("LabelSettings_queyg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Panel" parent="DebugConsole"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_eroim")
+metadata/_edit_use_anchors_ = true
+
+[node name="History" type="VBoxContainer" parent="DebugConsole/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017021276
+anchor_top = 0.020997375
+anchor_right = 0.98723406
+anchor_bottom = 0.88188976
+metadata/_edit_use_anchors_ = true
+
+[node name="ConsoleLine" type="LineEdit" parent="DebugConsole/Body"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.017021276
+anchor_top = 0.8976378
+anchor_right = 0.98723406
+anchor_bottom = 0.9790026
+focus_behavior_recursive = 2
+mouse_behavior_recursive = 2
+text = "> "
+keep_editing_on_text_submit = true
+caret_column = 2
+script = ExtResource("3_queyg")
+command_history_container = NodePath("../History")
+metadata/_custom_type_script = "uid://dug0cjqw5p7fs"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="close_requested" from="DebugInfo" to="." method="_on_debug_info_close_requested"]
+[connection signal="gui_input" from="DebugConsole/Header" to="." method="_on_console_gui_input"]

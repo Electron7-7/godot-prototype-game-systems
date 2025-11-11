@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://xofcqsatl1lh"]
+
+[ext_resource type="Script" uid="uid://bsw5i81k44y7j" path="res://scenes/level/level_3d.gd" id="1_e3e18"]
+
+[node name="DevRoom" type="Node3D"]
+script = ExtResource("1_e3e18")
+metadata/_custom_type_script = "uid://bsw5i81k44y7j"
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5)
+size = Vector3(21, 1, 20)

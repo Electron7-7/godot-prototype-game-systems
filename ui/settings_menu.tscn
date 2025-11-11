@@ -1,0 +1,244 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3yugg1k3qi4"]
+
+[ext_resource type="Theme" uid="uid://bklo82cv7ksfe" path="res://settings_menu.tres" id="1_h6jc8"]
+[ext_resource type="Script" uid="uid://dhe1xvtt7yhsx" path="res://ui/settings_menu.gd" id="2_a6yft"]
+[ext_resource type="Script" uid="uid://yak2ioc1aap1" path="res://ui/persistant_setting.gd" id="2_xutny"]
+[ext_resource type="Script" uid="uid://dgw118tsp8a7t" path="res://ui/labelled_h_slider.gd" id="4_2ty5h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6yft"]
+font_size = 64
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_h6jc8")
+script = ExtResource("2_a6yft")
+metadata/_custom_type_script = "uid://dhe1xvtt7yhsx"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_right = 271.0
+offset_bottom = 88.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_a6yft")
+
+[node name="SettingsList" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4887153
+anchor_top = 0.016975308
+anchor_right = 0.9887153
+anchor_bottom = 0.15277778
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="FoldableContainer" parent="SettingsList"]
+layout_mode = 2
+size_flags_vertical = 3
+folded = true
+title = "Player"
+
+[node name="Settings" type="VBoxContainer" parent="SettingsList/Player"]
+visible = false
+layout_mode = 2
+
+[node name="Name" type="HBoxContainer" parent="SettingsList/Player/Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_xutny")
+setting_label = NodePath("Label")
+setting_control = NodePath("Value")
+setting_name = "Name"
+setting_default_value = "thelegend27"
+metadata/_custom_type_script = "uid://yak2ioc1aap1"
+
+[node name="Label" type="Label" parent="SettingsList/Player/Settings/Name"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Name"
+vertical_alignment = 1
+
+[node name="Value" type="LineEdit" parent="SettingsList/Player/Settings/Name"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "thelegend27"
+placeholder_text = "thelegend27"
+
+[node name="FOV" type="HBoxContainer" parent="SettingsList/Player/Settings"]
+layout_mode = 2
+script = ExtResource("2_xutny")
+setting_label = NodePath("Label")
+setting_control = NodePath("HSliderLabelled")
+setting_name = "FOV"
+setting_default_value = 85.0
+metadata/_custom_type_script = "uid://yak2ioc1aap1"
+
+[node name="Label" type="Label" parent="SettingsList/Player/Settings/FOV"]
+layout_mode = 2
+text = "FOV"
+
+[node name="HSliderLabelled" type="HSlider" parent="SettingsList/Player/Settings/FOV"]
+custom_minimum_size = Vector2(300, 31)
+layout_mode = 2
+size_flags_vertical = 4
+value = 85.0
+script = ExtResource("4_2ty5h")
+_label = Object(LineEdit,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":2,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":0,"anchors_preset":0,"anchor_left":0.0,"anchor_top":0.0,"anchor_right":0.0,"anchor_bottom":0.0,"offset_left":305.0,"offset_top":0.0,"offset_right":373.5625,"offset_bottom":31.0,"grow_horizontal":1,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"localize_numeral_system":true,"tooltip_text":"","tooltip_auto_translate_mode":0,"focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":2,"focus_behavior_recursive":0,"mouse_filter":0,"mouse_behavior_recursive":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":1,"shortcut_context":null,"accessibility_name":"","accessibility_description":"","accessibility_live":0,"accessibility_controls_nodes":Array[NodePath]([]),"accessibility_described_by_nodes":Array[NodePath]([]),"accessibility_labeled_by_nodes":Array[NodePath]([]),"accessibility_flow_to_nodes":Array[NodePath]([]),"theme":null,"theme_type_variation":&"","text":"85.0","placeholder_text":"","alignment":0,"max_length":0,"editable":true,"keep_editing_on_text_submit":false,"expand_to_text_length":false,"context_menu_enabled":true,"emoji_menu_enabled":true,"backspace_deletes_composite_character_enabled":false,"virtual_keyboard_enabled":true,"virtual_keyboard_show_on_focus":true,"virtual_keyboard_type":0,"clear_button_enabled":false,"shortcut_keys_enabled":true,"middle_mouse_paste_enabled":true,"selecting_enabled":true,"deselect_on_focus_loss_enabled":true,"drag_and_drop_selection_enabled":true,"right_icon":null,"flat":false,"draw_control_chars":false,"select_all_on_focus":false,"caret_blink":false,"caret_blink_interval":0.65,"caret_column":0,"caret_force_displayed":false,"caret_mid_grapheme":false,"secret":false,"secret_character":"•","text_direction":0,"language":"","structured_text_bidi_override":0,"structured_text_bidi_override_options":[],"script":null)
+
+_label_added = 1.0
+metadata/_custom_type_script = "uid://dgw118tsp8a7t"
+
+[node name="Mouse Sensitivity" type="HBoxContainer" parent="SettingsList/Player/Settings"]
+layout_mode = 2
+script = ExtResource("2_xutny")
+setting_label = NodePath("Label")
+setting_control = NodePath("HSliderLabelled")
+setting_name = "Mouse Sensitivity"
+setting_default_value = 50.0
+metadata/_custom_type_script = "uid://yak2ioc1aap1"
+
+[node name="Label" type="Label" parent="SettingsList/Player/Settings/Mouse Sensitivity"]
+layout_mode = 2
+text = "Mouse Sensitivity"
+
+[node name="HSliderLabelled" type="HSlider" parent="SettingsList/Player/Settings/Mouse Sensitivity"]
+custom_minimum_size = Vector2(300, 31)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 10.0
+value = 1.0
+script = ExtResource("4_2ty5h")
+_label = Object(LineEdit,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":2,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":0,"anchors_preset":0,"anchor_left":0.0,"anchor_top":0.0,"anchor_right":0.0,"anchor_bottom":0.0,"offset_left":305.0,"offset_top":0.0,"offset_right":373.5625,"offset_bottom":31.0,"grow_horizontal":1,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"localize_numeral_system":true,"tooltip_text":"","tooltip_auto_translate_mode":0,"focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":2,"focus_behavior_recursive":0,"mouse_filter":0,"mouse_behavior_recursive":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":1,"shortcut_context":null,"accessibility_name":"","accessibility_description":"","accessibility_live":0,"accessibility_controls_nodes":Array[NodePath]([]),"accessibility_described_by_nodes":Array[NodePath]([]),"accessibility_labeled_by_nodes":Array[NodePath]([]),"accessibility_flow_to_nodes":Array[NodePath]([]),"theme":null,"theme_type_variation":&"","text":"1","placeholder_text":"","alignment":0,"max_length":0,"editable":true,"keep_editing_on_text_submit":false,"expand_to_text_length":false,"context_menu_enabled":true,"emoji_menu_enabled":true,"backspace_deletes_composite_character_enabled":false,"virtual_keyboard_enabled":true,"virtual_keyboard_show_on_focus":true,"virtual_keyboard_type":0,"clear_button_enabled":false,"shortcut_keys_enabled":true,"middle_mouse_paste_enabled":true,"selecting_enabled":true,"deselect_on_focus_loss_enabled":true,"drag_and_drop_selection_enabled":true,"right_icon":null,"flat":false,"draw_control_chars":false,"select_all_on_focus":false,"caret_blink":false,"caret_blink_interval":0.65,"caret_column":0,"caret_force_displayed":false,"caret_mid_grapheme":false,"secret":false,"secret_character":"•","text_direction":0,"language":"","structured_text_bidi_override":0,"structured_text_bidi_override_options":[],"script":null)
+
+_label_added = 1.0
+value_type = 2
+metadata/_custom_type_script = "uid://dgw118tsp8a7t"
+
+[node name="Mouse Sensitivity Scale" type="HBoxContainer" parent="SettingsList/Player/Settings"]
+layout_mode = 2
+script = ExtResource("2_xutny")
+setting_label = NodePath("Label")
+setting_control = NodePath("HSliderLabelled")
+setting_name = "Mouse Sensitivity Scale"
+setting_default_value = 0.5
+metadata/_custom_type_script = "uid://yak2ioc1aap1"
+
+[node name="Label" type="Label" parent="SettingsList/Player/Settings/Mouse Sensitivity Scale"]
+layout_mode = 2
+text = "Mouse Sensitivity Scale"
+
+[node name="HSliderLabelled" type="HSlider" parent="SettingsList/Player/Settings/Mouse Sensitivity Scale"]
+custom_minimum_size = Vector2(269, 31)
+layout_mode = 2
+size_flags_vertical = 4
+min_value = 1.0
+value = 30.0
+script = ExtResource("4_2ty5h")
+_label = Object(LineEdit,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":2,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"clip_contents":false,"custom_minimum_size":Vector2(0, 0),"layout_direction":0,"layout_mode":0,"anchors_preset":0,"anchor_left":0.0,"anchor_top":0.0,"anchor_right":0.0,"anchor_bottom":0.0,"offset_left":274.0,"offset_top":0.0,"offset_right":342.5625,"offset_bottom":31.0,"grow_horizontal":1,"grow_vertical":1,"rotation":0.0,"scale":Vector2(1, 1),"pivot_offset":Vector2(0, 0),"size_flags_horizontal":1,"size_flags_vertical":1,"size_flags_stretch_ratio":1.0,"localize_numeral_system":true,"tooltip_text":"","tooltip_auto_translate_mode":0,"focus_neighbor_left":NodePath(""),"focus_neighbor_top":NodePath(""),"focus_neighbor_right":NodePath(""),"focus_neighbor_bottom":NodePath(""),"focus_next":NodePath(""),"focus_previous":NodePath(""),"focus_mode":2,"focus_behavior_recursive":0,"mouse_filter":0,"mouse_behavior_recursive":0,"mouse_force_pass_scroll_events":true,"mouse_default_cursor_shape":1,"shortcut_context":null,"accessibility_name":"","accessibility_description":"","accessibility_live":0,"accessibility_controls_nodes":Array[NodePath]([]),"accessibility_described_by_nodes":Array[NodePath]([]),"accessibility_labeled_by_nodes":Array[NodePath]([]),"accessibility_flow_to_nodes":Array[NodePath]([]),"theme":null,"theme_type_variation":&"","text":"30","placeholder_text":"","alignment":0,"max_length":0,"editable":true,"keep_editing_on_text_submit":false,"expand_to_text_length":false,"context_menu_enabled":true,"emoji_menu_enabled":true,"backspace_deletes_composite_character_enabled":false,"virtual_keyboard_enabled":true,"virtual_keyboard_show_on_focus":true,"virtual_keyboard_type":0,"clear_button_enabled":false,"shortcut_keys_enabled":true,"middle_mouse_paste_enabled":true,"selecting_enabled":true,"deselect_on_focus_loss_enabled":true,"drag_and_drop_selection_enabled":true,"right_icon":null,"flat":false,"draw_control_chars":false,"select_all_on_focus":false,"caret_blink":false,"caret_blink_interval":0.65,"caret_column":0,"caret_force_displayed":false,"caret_mid_grapheme":false,"secret":false,"secret_character":"•","text_direction":0,"language":"","structured_text_bidi_override":0,"structured_text_bidi_override_options":[],"script":null)
+
+_label_added = 1.0
+value_type = 2
+metadata/_custom_type_script = "uid://dgw118tsp8a7t"
+
+[node name="Mouse Sensitivity Scaling Inverted" type="HBoxContainer" parent="SettingsList/Player/Settings"]
+layout_mode = 2
+script = ExtResource("2_xutny")
+setting_label = NodePath("Label")
+setting_control = NodePath("CheckBox")
+setting_name = "Mouse Sensitivity Scaling Inverted"
+setting_default_value = false
+metadata/_custom_type_script = "uid://yak2ioc1aap1"
+
+[node name="Label" type="Label" parent="SettingsList/Player/Settings/Mouse Sensitivity Scaling Inverted"]
+layout_mode = 2
+text = "Mouse Sensitivity Scaling Inverted"
+
+[node name="CheckBox" type="CheckBox" parent="SettingsList/Player/Settings/Mouse Sensitivity Scaling Inverted"]
+layout_mode = 2
+
+[node name="Display" type="FoldableContainer" parent="SettingsList"]
+layout_mode = 2
+folded = true
+title = "Display"
+
+[node name="Settings" type="VBoxContainer" parent="SettingsList/Display"]
+visible = false
+layout_mode = 2
+
+[node name="Window Mode" type="HBoxContainer" parent="SettingsList/Display/Settings"]
+layout_mode = 2
+script = ExtResource("2_xutny")
+setting_label = NodePath("Label")
+setting_control = NodePath("OptionButton")
+setting_section = 2
+setting_name = "Window Mode"
+setting_default_value = 0
+metadata/_custom_type_script = "uid://yak2ioc1aap1"
+
+[node name="Label" type="Label" parent="SettingsList/Display/Settings/Window Mode"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Window Mode"
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="SettingsList/Display/Settings/Window Mode"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 3
+popup/item_2/text = "Exclusive Fullscreen"
+popup/item_2/id = 4
+
+[node name="Apply" type="Button" parent="."]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 573.0
+offset_right = 979.0
+offset_bottom = 630.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "Apply Settings"
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 983.0
+offset_top = 573.0
+offset_right = 1136.0
+offset_bottom = 630.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+disabled = true
+text = "Save Settings"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 573.0
+offset_right = 172.0
+offset_bottom = 630.0
+text = "Back"
+
+[node name="Discard" type="Button" parent="."]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 573.0
+offset_right = 826.0
+offset_bottom = 630.0
+disabled = true
+text = "Discard Changes"

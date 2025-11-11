@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cyi3dvnm25s1s"]
 
-[ext_resource type="Script" uid="uid://dos6axoupfyxj" path="res://ui/debugger.gd" id="1_x0pvs"]
-[ext_resource type="FontFile" uid="uid://bscuqh1e5l8j0" path="res://fonts/NotoSans-Bold.ttf" id="2_queyg"]
-[ext_resource type="FontFile" uid="uid://caiw57cig6lu2" path="res://fonts/NotoSans-Regular.ttf" id="3_4v6k1"]
-[ext_resource type="Script" uid="uid://dug0cjqw5p7fs" path="res://ui/ConsoleLine.gd" id="3_queyg"]
+[ext_resource type="Script" uid="uid://dos6axoupfyxj" path="res://ui/scripts/debugger.gd" id="1_b2nsh"]
+[ext_resource type="FontFile" uid="uid://bscuqh1e5l8j0" path="res://ui/fonts/NotoSans-Bold.ttf" id="2_6qpf8"]
+[ext_resource type="FontFile" uid="uid://caiw57cig6lu2" path="res://ui/fonts/NotoSans-Regular.ttf" id="3_vioge"]
+[ext_resource type="Script" uid="uid://dug0cjqw5p7fs" path="res://ui/scripts/console_line_edit.gd" id="4_717vc"]
 
 [sub_resource type="Theme" id="Theme_3j7gw"]
-Label/fonts/font = ExtResource("2_queyg")
+Label/fonts/font = ExtResource("2_6qpf8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v6k1"]
 bg_color = Color(0.10747974, 0.10747974, 0.10747967, 1)
@@ -14,7 +14,7 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_queyg"]
-font = ExtResource("3_4v6k1")
+font = ExtResource("3_vioge")
 font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eroim"]
@@ -23,7 +23,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [node name="Debugger" type="Node2D"]
-script = ExtResource("1_x0pvs")
+script = ExtResource("1_b2nsh")
 metadata/_custom_type_script = "uid://dos6axoupfyxj"
 metadata/_edit_use_anchors_ = true
 
@@ -110,7 +110,7 @@ mouse_behavior_recursive = 2
 text = "> "
 keep_editing_on_text_submit = true
 caret_column = 2
-script = ExtResource("3_queyg")
+script = ExtResource("4_717vc")
 command_history_container = NodePath("../History")
 metadata/_custom_type_script = "uid://dug0cjqw5p7fs"
 metadata/_edit_use_anchors_ = true

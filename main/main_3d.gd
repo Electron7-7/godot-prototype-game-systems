@@ -4,7 +4,7 @@ extends Node3D
 static var has_player: bool = false
 static var player : Player3D
 
-var _player_scene := preload("res://scenes/actor/player/player_3d.tscn")
+var _player_scene := preload("res://objects/scenes/player_3d.tscn")
 var _current_level: Level3D = null
 
 

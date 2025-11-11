@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3yugg1k3qi4"]
 
-[ext_resource type="Theme" uid="uid://bklo82cv7ksfe" path="res://settings_menu.tres" id="1_h6jc8"]
-[ext_resource type="Script" uid="uid://dhe1xvtt7yhsx" path="res://ui/settings_menu.gd" id="2_a6yft"]
-[ext_resource type="Script" uid="uid://yak2ioc1aap1" path="res://ui/persistant_setting.gd" id="2_xutny"]
-[ext_resource type="Script" uid="uid://dgw118tsp8a7t" path="res://ui/labelled_h_slider.gd" id="4_2ty5h"]
+[ext_resource type="Theme" uid="uid://bklo82cv7ksfe" path="res://ui/themes/settings_menu.tres" id="1_h6jc8"]
+[ext_resource type="Script" uid="uid://dhe1xvtt7yhsx" path="res://ui/scripts/settings_menu.gd" id="2_a6yft"]
+[ext_resource type="Script" uid="uid://yak2ioc1aap1" path="res://ui/scripts/persistant_setting.gd" id="2_xutny"]
+[ext_resource type="Script" uid="uid://dgw118tsp8a7t" path="res://ui/scripts/labelled_h_slider.gd" id="4_2ty5h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a6yft"]
 font_size = 64
@@ -106,7 +106,7 @@ script = ExtResource("2_xutny")
 setting_label = NodePath("Label")
 setting_control = NodePath("HSliderLabelled")
 setting_name = "Mouse Sensitivity"
-setting_default_value = 50.0
+setting_default_value = 1.0
 metadata/_custom_type_script = "uid://yak2ioc1aap1"
 
 [node name="Label" type="Label" parent="SettingsList/Player/Settings/Mouse Sensitivity"]
@@ -132,7 +132,7 @@ script = ExtResource("2_xutny")
 setting_label = NodePath("Label")
 setting_control = NodePath("HSliderLabelled")
 setting_name = "Mouse Sensitivity Scale"
-setting_default_value = 0.5
+setting_default_value = 30.0
 metadata/_custom_type_script = "uid://yak2ioc1aap1"
 
 [node name="Label" type="Label" parent="SettingsList/Player/Settings/Mouse Sensitivity Scale"]

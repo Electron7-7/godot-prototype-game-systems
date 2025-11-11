@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://csqov82dmjxa4"]
 
-[ext_resource type="Script" uid="uid://o005y3d13f08" path="res://scenes/actor/player/player_3d.gd" id="1_8x86c"]
-[ext_resource type="Environment" uid="uid://bifu7ggw2wf6y" path="res://default_env.tres" id="2_8pehb"]
+[ext_resource type="Script" uid="uid://o005y3d13f08" path="res://objects/player_3d.gd" id="1_exgkt"]
+[ext_resource type="Environment" uid="uid://bifu7ggw2wf6y" path="res://default_env.tres" id="2_yupvc"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6xfpo"]
 radial_segments = 8
 rings = 2
 
 [node name="Player3D" type="Node3D"]
-script = ExtResource("1_8x86c")
+script = ExtResource("1_exgkt")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -16,7 +16,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="Camera" type="Camera3D" parent="Head"]
 unique_name_in_owner = true
 cull_mask = 1048573
-environment = ExtResource("2_8pehb")
+environment = ExtResource("2_yupvc")
 current = true
 fov = 85.0
 near = 0.01

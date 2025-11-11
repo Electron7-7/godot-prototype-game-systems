@@ -1,5 +1,5 @@
 @tool
-class_name ConsoleLine
+class_name ConsoleLineEdit
 extends LineEdit
 
 enum Prefix {

@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://xofcqsatl1lh"]
 
-[ext_resource type="Script" uid="uid://bsw5i81k44y7j" path="res://scenes/level/level_3d.gd" id="1_e3e18"]
+[ext_resource type="Script" uid="uid://bsw5i81k44y7j" path="res://objects/level_3d.gd" id="1_p1ia3"]
 
 [node name="DevRoom" type="Node3D"]
-script = ExtResource("1_e3e18")
+script = ExtResource("1_p1ia3")
 metadata/_custom_type_script = "uid://bsw5i81k44y7j"
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]

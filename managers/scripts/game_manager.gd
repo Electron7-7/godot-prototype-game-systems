@@ -106,7 +106,7 @@ func shutdown() -> void:
 
 func start_game() -> void:
       gSceneManager.start_3d()
-      gSceneManager.load_level_3d(load("res://scenes/level/dev_room.tscn").instantiate())
+      gSceneManager.load_level_3d(load("res://objects/scenes/dev_room.tscn").instantiate())
       capture_cursor()
       _in_game = true
       _game_paused = false

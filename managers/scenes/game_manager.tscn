@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnk1f1pqthujj"]
 
-[ext_resource type="Script" uid="uid://cnm5xgjr7sf6i" path="res://managers/game_manager.gd" id="1_70yv6"]
+[ext_resource type="Script" uid="uid://cnm5xgjr7sf6i" path="res://managers/scripts/game_manager.gd" id="1_nxpgl"]
 
 [node name="GameManager" type="Node"]
 process_mode = 3
-script = ExtResource("1_70yv6")
+script = ExtResource("1_nxpgl")
 metadata/_custom_type_script = "uid://cnm5xgjr7sf6i"

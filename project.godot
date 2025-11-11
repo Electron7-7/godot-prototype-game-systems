@@ -22,12 +22,12 @@ config/icon="res://icon.png"
 
 [autoload]
 
-gGameManager="*res://managers/game_manager.gd"
-gSettingsManager="*res://managers/settings_manager.gd"
-gSceneManager="*res://managers/scene_manager.gd"
-gUIManager="*res://managers/ui_manager.tscn"
-gPlayerData="*res://scenes/actor/player/player_data.gd"
-gDebugger="*res://ui/debugger.tscn"
+gGameManager="*res://managers/scripts/game_manager.gd"
+gSettingsManager="*res://managers/scripts/settings_manager.gd"
+gSceneManager="*res://managers/scripts/scene_manager.gd"
+gUIManager="*res://managers/scenes/ui_manager.tscn"
+gPlayerData="*res://objects/player_data.gd"
+gDebugger="*res://ui/scenes/debugger.tscn"
 
 [display]
 
